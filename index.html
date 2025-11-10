@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Example</title>
+</head>
+<body onclick="alert('You clicked the body!')">
+
+  <h2>Event Handling Demo</h2>
+
+  <!-- Button click event -->
+  <button id="myBtn">Click me</button>
+  <p id="msg"></p>
+
+  <!-- Live input text update -->
+  <input type="text" id="liveInput" placeholder="Type something...">
+  <p id="liveText"></p>
+
+  <!-- Password strength check -->
+  <input type="password" id="password" placeholder="Enter password">
+  <p id="strength"></p>
+
+  <script>
+    // Button click handler
+    document.getElementById("myBtn").onclick = function () {
+      this.textContent = "Clicked!";
+      document.getElementById("msg").textContent = "Button clicked successfully!";
+    };
+
+    // Live text input handler
+    document.getElementById("liveInput").oninput = function () {
+      document.getElementById("liveText").textContent = this.value;
+    };
+
+    // Password strength handler
+    document.getElementById("password").oninput = function () {
+      let len = this.value.length;
+      let strength = len < 4 ? "Weak" : len < 8 ? "Medium" : "Strong";
+      document.getElementById("strength").textContent = "Password Strength: " + strength;
+    };
+  </script>
+
+</body>
+</html>

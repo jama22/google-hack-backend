@@ -6,7 +6,7 @@ from UTILS.content import get_content_from_link
 
 #API KEY DECLARATION
 # GEMINI_API_KEY = "AIzaSyDH06vyJHu3GpKWg2Hqjp-on0vD4mjjI7o"
-GEMINI_API_KEY = "AIzaSyBFSGADsbbtoC3JuHn66c6QMigGTmVVSUM"
+GEMINI_API_KEY = "AIzaSyAcqTRiQqtEORsL8o6bppPm6CHlRuq5uFA"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={GEMINI_API_KEY}"
 
 # #Function definition
@@ -203,7 +203,8 @@ def generate_gemini_response(user_text, news_articles):
         
         **Strict JSON Output:**
         Provide the entire response as a single JSON object. The structure must be exactly as follows. Do not include any other text or markdown outside this JSON object.
-        For the image add the image of the incident that you got from that website.
+        For the image add the image of the incident that you got from that website. The image cannot be null.
+        and it should be a valid image, and related to the content.
         {{
             "verdict": ["AI GENERATED", "NOT AI GENERATED"],
             "confidence_score": "number",
@@ -241,6 +242,7 @@ def generate_gemini_response(user_text, news_articles):
 
         }}
 """
+
 
     user_query = f"""
       Analyze the following claim:

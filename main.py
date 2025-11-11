@@ -98,6 +98,7 @@ def verify_news_claim(user_input: dict):
 
 
 
+
 @app.post("/get-audio")
 def get_audio_description(audio_path: dict):
     try:

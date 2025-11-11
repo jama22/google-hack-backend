@@ -38,6 +38,9 @@ const storage = multer.diskStorage({
 // Initialize Multer middleware
 const upload = multer({ storage });
 
+app.get("/" , (req, res) => {
+  res.send("HIII"); 
+})
 // Route to handle single file upload
 app.post("/upload", upload.single("file"), (req, res) => {
   console.log("📥 Received upload request");
@@ -68,7 +71,8 @@ app.post("/get-audio-description", async (req, res) => {
 });
 
 app.post("/get-test-analysis", async(req, res) => {
-   
+     const { text } = req.body;
+     
 })
 app.post("/get-audio-analysis", async (req, res) => {
     const { text } = req.body;

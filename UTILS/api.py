@@ -5,8 +5,7 @@ import time
 from UTILS.content import get_content_from_link
 
 #API KEY DECLARATION
-# GEMINI_API_KEY = "AIzaSyDH06vyJHu3GpKWg2Hqjp-on0vD4mjjI7o"
-GEMINI_API_KEY = "AIzaSyAcqTRiQqtEORsL8o6bppPm6CHlRuq5uFA"
+
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={GEMINI_API_KEY}"
 
 # #Function definition
